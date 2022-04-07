@@ -1,15 +1,22 @@
-
 public class Review {
 
-    public static void main(String []args) {
+    public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3, 4, 5};
-        System.out.println(getProductOfAll(arr));
-        System.out.println(findMin(10, 11));
-        countToZero(10);
-        happyNewYear(10);
-        reverseString("Hello");
-        System.out.println("Is Hannah a palindrome: " + isPalindrome("Hannah"));
+//        int[] arr = {1, 2, 3, 4, 5};
+//        System.out.println(getProductOfAll(arr));
+//        System.out.println(findMin(10, 11));
+//        countToZero(10);
+//        happyNewYear(10);
+//        reverseString("Hello");
+        String word = "saippuakivikauppias"; // Finnish word meaning soapstone vendor
+        String word2 = "civic";
+        String word3 = "David";
+        String word4 = "Hannah";
+        System.out.println("Is " + word + " a palindrome: " + isPalindrome(word));
+        System.out.println("Is " + word2 + " a palindrome: " + isPalindrome(word2));
+        System.out.println("Is " + word3 + " a palindrome: " + isPalindrome(word3));
+        System.out.println("Is " + word4 + " a palindrome: " + isPalindrome(word4));
+
 
     }
 
@@ -21,20 +28,18 @@ public class Review {
     public static void countToZero(int timer) {
         if (timer < 0) {
             System.out.println("sorry");
-        }
-        else {
+        } else {
             do {
                 System.out.println(timer);
                 timer--;
-            }
-            while (timer >= 0);
+            } while (timer >= 0);
         }
     }
 
     public static int getProductOfAll(int[] arr) {
         int product = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            product*=arr[i];
+            product *= arr[i];
         }
         return product;
     }
@@ -42,7 +47,7 @@ public class Review {
     public static double getAverage(int[] arr) {
         double sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum+=arr[i];
+            sum += arr[i];
         }
         return sum / arr.length;
     }
@@ -51,8 +56,7 @@ public class Review {
         for (int i = timer; i > 0; --i) {
             if (i % 2 == 1) {
                 System.out.println("OUU! " + i);
-            }
-            else {
+            } else {
                 System.out.println("AAA! " + i);
             }
         }
@@ -61,8 +65,8 @@ public class Review {
 
     public static void reverseString(String string) {
         String newString = "";
-        for (int i = string.length()-1; i >= 0; i--) {
-            newString+=string.charAt(i);
+        for (int i = string.length() - 1; i >= 0; i--) {
+            newString += string.charAt(i);
         }
         System.out.println(newString);
     }
@@ -70,10 +74,10 @@ public class Review {
     public static boolean isPalindrome(String string) {
         String newString1 = "";
         String newString2 = "";
-        int j = string.length()-1;
+        int j = string.length() - 1;
         for (int i = 0; i < j; i++) {
-            newString1+=string.charAt(i);
-            newString2+=string.charAt(j);
+            newString1 += string.charAt(i);
+            newString2 += string.charAt(j);
             if (!newString1.equalsIgnoreCase(newString2)) return false;
             j--;
         }
