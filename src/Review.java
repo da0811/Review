@@ -8,6 +8,7 @@ public class Review {
         System.out.println(findMin(10, 11));
         countToZero(10);
         happyNewYear(10);
+        reverseString("Hello");
 
     }
 
@@ -55,6 +56,56 @@ public class Review {
             }
         }
         System.out.println("Happy New Year!");
+    }
+
+    public static void reverseString(String string) {
+        String newString = "";
+        for (int i = string.length()-1; i >= 0; i--) {
+            newString+=string.charAt(i);
+        }
+        System.out.println(newString);
+    }
+
+    public static class House {
+        private int numWindows;
+        private String ownerName;
+        private boolean hasStairs;
+
+        public House() {
+            numWindows = 6;
+            ownerName = "";
+            hasStairs = false;
+        }
+
+        public House(int numWindows, String ownerName, boolean hasStairs) {
+            this.numWindows = numWindows;
+            this.ownerName = ownerName;
+            this.hasStairs = hasStairs;
+        }
+
+        public int getNumWindows() {
+            return numWindows;
+        }
+
+        public void setNumWindows(int numWindows) {
+            this.numWindows = numWindows;
+        }
+
+        public String getOwnerName() {
+            return ownerName;
+        }
+
+        public void setOwnerName(String ownerName) {
+            this.ownerName = ownerName;
+        }
+
+        public boolean isHasStairs() {
+            return hasStairs;
+        }
+
+        public void setHasStairs(boolean hasStairs) {
+            this.hasStairs = hasStairs;
+        }
     }
 
     public static class Apartment {
