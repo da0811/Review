@@ -9,6 +9,7 @@ public class Review {
         countToZero(10);
         happyNewYear(10);
         reverseString("Hello");
+        System.out.println("Is Hannah a palindrome: " + isPalindrome("Hannah"));
 
     }
 
@@ -64,6 +65,19 @@ public class Review {
             newString+=string.charAt(i);
         }
         System.out.println(newString);
+    }
+
+    public static boolean isPalindrome(String string) {
+        String newString1 = "";
+        String newString2 = "";
+        int j = string.length()-1;
+        for (int i = 0; i < j; i++) {
+            newString1+=string.charAt(i);
+            newString2+=string.charAt(j);
+            if (!newString1.equalsIgnoreCase(newString2)) return false;
+            j--;
+        }
+        return true;
     }
 
     public static class House {
