@@ -7,6 +7,7 @@ public class Review {
         System.out.println(getProductOfAll(arr));
         System.out.println(findMin(10, 11));
         countToZero(10);
+        happyNewYear(10);
 
     }
 
@@ -42,6 +43,18 @@ public class Review {
             sum+=arr[i];
         }
         return sum / arr.length;
+    }
+
+    public static void happyNewYear(int timer) {
+        for (int i = timer; i > 0; --i) {
+            if (i % 2 == 1) {
+                System.out.println("OUU! " + i);
+            }
+            else {
+                System.out.println("AAA! " + i);
+            }
+        }
+        System.out.println("Happy New Year!");
     }
 
     public static class Apartment {
