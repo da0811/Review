@@ -1,3 +1,5 @@
+import sun.lwawt.macosx.CSystemTray;
+
 public class Review {
 
     public static void main(String[] args) {
@@ -17,7 +19,113 @@ public class Review {
         System.out.println("Is " + word3 + " a palindrome: " + isPalindrome(word3));
         System.out.println("Is " + word4 + " a palindrome: " + isPalindrome(word4));
 
+        House house1 = new House(6, "Hulk", true);
+        House house2 = new House(6, "Spider-man", false);
 
+        System.out.println(charSearch("David", 'x'));
+
+        reverseString("David");
+
+        Insect caterpillar = new Insect(10, false, 4, "Caterpillar", true);
+        Insect butterfly = new Insect(4, true, 2, "Butterfly", false);
+
+        Insect bug1 = new Insect();
+        Insect bug2 = new Insect();
+        Insect bug3 = new Insect();
+
+        caterpillar.setMoving(false);
+        butterfly.setMoving(true);
+
+        Insect[] bugs = {bug1, bug2, bug3, caterpillar, butterfly};
+
+        for (int i = 0; i < bugs.length; i++) {
+            System.out.println(bugs[i].getCommonName());
+        }
+
+        bug1.setCommonName("bug1");
+
+        System.out.println(bugs[0].getCommonName());
+    }
+
+    public static class Insect {
+        private int numLegs;
+        private boolean hasWings;
+        private int weight;
+        private String commonName;
+        private boolean isMoving;
+
+        public Insect() {
+            this.numLegs = 4;
+            this.hasWings = false;
+            this.weight = 10;
+            this.commonName = "bug";
+            this.isMoving = false;
+        }
+
+        public Insect(int numLegs, boolean hasWings, int weight, String commonName, boolean isMoving) {
+            this.numLegs = numLegs;
+            this.hasWings = hasWings;
+            this.weight = weight;
+            this.commonName = commonName;
+            this.isMoving = isMoving;
+        }
+
+        public int getNumLegs() {
+            return numLegs;
+        }
+
+        public void setNumLegs(int numLegs) {
+            this.numLegs = numLegs;
+        }
+
+        public boolean isHasWings() {
+            return hasWings;
+        }
+
+        public void setHasWings(boolean hasWings) {
+            this.hasWings = hasWings;
+        }
+
+        public int getWeight() {
+            return weight;
+        }
+
+        public void setWeight(int weight) {
+            this.weight = weight;
+        }
+
+        public String getCommonName() {
+            return commonName;
+        }
+
+        public void setCommonName(String commonName) {
+            this.commonName = commonName;
+        }
+
+        public boolean getMoving() {
+            return isMoving;
+        }
+
+        public void setMoving(boolean isMoving) {
+            this.isMoving = isMoving;
+            if(isMoving == true) {
+                System.out.println(commonName + " is moving.");
+            }
+            else {
+                System.out.println(commonName + " is not moving.");
+            }
+        }
+    }
+
+    public static int charSearch(String string, char target) {
+        int length = string.length();
+        int i = 0;
+        do {
+            if(string.charAt(i) == target) return i;
+            i++;
+        } while (i < length);
+
+        return -1;
     }
 
     public static int findMin(int a, int b) {
